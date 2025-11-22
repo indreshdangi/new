@@ -1,0 +1,379 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Poppins', sans-serif;
+    background: #131528;
+  }
+
+  body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: #131528;
+    color: #f2f3f7;
+    font-family: 'Poppins', sans-serif;
+    /* overlays handled in MainLayout */
+  }
+}
+/* ===== select / dropdown: force visible in both themes ===== */
+#model-select {
+  appearance: none; /* remove default arrow (works most browsers) */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-clip: padding-box;
+  padding: 10px 36px 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+  font-size: 14px;
+  min-width: 220px;
+  color: var(--select-text, #eaeaf2); /* variable fallback */
+  background-color: var(--select-bg, rgba(255,255,255,0.03));
+  outline: none;
+  z-index: 60;
+  position: relative;
+}
+
+/* dropdown list appearance (for some browsers) */
+#model-select option {
+  background: var(--select-bg, rgba(255,255,255,0.03));
+  color: var(--select-text, #eaeaf2);
+}
+
+/* ensure dropdown container's overlay is above dark panel */
+select#model-select, .select-wrapper { z-index: 9999 !important; }
+
+/* theme variables for dark/light — add if not present */
+body[data-theme="dark"] {
+  --select-bg: rgba(255,255,255,0.03);
+  --select-text: #eaeaf2;
+}
+body[data-theme="light"] {
+  --select-bg: #ffffff;
+  --select-text: #111827;
+}
+/* footer / note visibility */
+.app-note, .api-note, .footer-note, .note {
+  font-size: 13px;
+  padding: 6px 12px;
+  color: var(--note-text);
+  background: transparent;
+  z-index: 20;
+}
+
+/* theme colors */
+body[data-theme="dark"] { --note-text: rgba(202,163,255,0.9); }
+body[data-theme="light"] { --note-text: rgba(80,84,92,0.9); }
+
+/* ensure footer area not covered */
+.chat-footer { position: relative; z-index: 30; }
+/* ensure input area and send button are always clickable and above chat messages */
+.chat-input, .input-wrapper, .send-button {
+  position: relative;
+  z-index: 100;
+  pointer-events: auto !important;
+}
+
+/* fix any accidental overlay from chat-messages */
+.chat-messages { z-index: 5; position: relative; }
+
+/* send button specifics */
+.send-button {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  outline: none;
+  border: none;
+}
+
+/* if button looks disabled due to opacity */
+.send-button[disabled] { opacity: 0.7; pointer-events: none; }
+
+
+@layer components {
+  /* Modern glassmorphism background and text gradient */
+  .dark-glass-bg {
+    @apply min-h-screen w-full flex items-center justify-center relative;
+    background: linear-gradient(120deg, #22243f 0%, #21284e 70%, #1B1B2F 100%);
+  }
+
+  .glass-card-2 {
+    @apply bg-white/10 backdrop-blur-2xl rounded-3xl border border-white/10 shadow-[0_10px_40px_0_rgba(27,27,47,0.30)] overflow-hidden transition-all duration-300;
+  }
+
+  .glassmorphism-inner {
+    @apply bg-white/5 backdrop-blur rounded-2xl border border-white/5 shadow-inner;
+  }
+
+  .chat-bubble {
+    @apply rounded-2xl p-5 my-4 max-w-[80%] backdrop-blur-sm border shadow-lg transition-all duration-300;
+  }
+  .chat-bubble-user {
+    @apply bg-indigo-700/80 text-white border-indigo-500/30 shadow-[0_4px_20px_0_rgba(80,50,230,0.20)] ml-auto;
+  }
+  .chat-bubble-assistant {
+    @apply bg-white/10 border-white/30 text-white/90 shadow-[0_2px_12px_0_rgba(194,182,255,0.10)] mr-auto;
+  }
+  .text-gradient {
+    background: linear-gradient(90deg, #e0e0f8 25%, #90cdf4 75%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .category-button {
+    @apply px-3 py-1 rounded-full text-sm font-semibold transition-all;
+  }
+  
+  .category-button.active {
+    @apply bg-white/30 text-white;
+  }
+
+  .category-button.inactive {
+    @apply bg-white/10 hover:bg-white/20 text-white/80;
+  }
+
+  .pulse-animation {
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+  }
+  
+  /* Adding Poppins font for a more modern look */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+  
+  html {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer base {
+  html {
+    font-family: 'Poppins', 'Playfair Display', sans-serif;
+    background: #131528;
+  }
+
+  body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: #131528;
+    color: #f2f3f7;
+    font-family: 'Poppins', 'Playfair Display', sans-serif;
+    /* overlays handled in MainLayout */
+    height: 100dvh;
+    width: 100vw;
+    overflow: hidden;
+  }
+}
+@layer components {
+  /* Modern glassmorphism background and text gradient */
+  .dark-glass-bg {
+    @apply min-h-screen w-full flex items-center justify-center relative;
+    background: linear-gradient(120deg, #22243f 0%, #21284e 70%, #1B1B2F 100%);
+  }
+
+  .glass-card-2 {
+    @apply bg-white/10 backdrop-blur-2xl rounded-3xl border border-white/10 shadow-[0_10px_40px_0_rgba(27,27,47,0.30)] overflow-hidden transition-all duration-300;
+  }
+
+  .glassmorphism-inner {
+    @apply bg-white/5 backdrop-blur rounded-2xl border border-white/5 shadow-inner;
+  }
+
+  .chat-bubble {
+    @apply rounded-2xl p-5 my-4 max-w-[80%] backdrop-blur-sm border shadow-lg transition-all duration-300;
+  }
+  .chat-bubble-user {
+    @apply bg-indigo-700/80 text-white border-indigo-500/30 shadow-[0_4px_20px_0_rgba(80,50,230,0.20)] ml-auto;
+  }
+  .chat-bubble-assistant {
+    @apply bg-white/10 border-white/30 text-white/90 shadow-[0_2px_12px_0_rgba(194,182,255,0.10)] mr-auto;
+  }
+  .text-gradient {
+    background: linear-gradient(90deg, #e0e0f8 25%, #90cdf4 75%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .category-button {
+    @apply px-3 py-1 rounded-full text-sm font-semibold transition-all;
+  }
+  
+  .category-button.active {
+    @apply bg-white/30 text-white;
+  }
+
+  .category-button.inactive {
+    @apply bg-white/10 hover:bg-white/20 text-white/80;
+  }
+
+  .pulse-animation {
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+  }
+  
+  /* Adding Poppins font for a more modern look */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+  
+  html {
+    font-family: 'Poppins', sans-serif;
+  }
+  /* Font imports for professional look */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+  .font-playfair {
+    font-family: 'Playfair Display', 'Poppins', serif;
+  }
+}
+/* global responsive adjustments */
+:root{
+  --card-max-width: 920px;
+  --gap: 12px;
+}
+
+/* container */
+.card {
+  width: 100%;
+  max-width: var(--card-max-width);
+  margin: 12px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* header controls wrap on small screens */
+.header { flex-wrap: wrap; gap:8px; align-items:center; }
+.controls { display:flex; gap:8px; flex-wrap:wrap; }
+
+/* select and small controls shrink properly */
+.controls select, .controls button {
+  min-width: 44px;
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* messages area spacing and font scaling */
+.messages { padding: 10px; font-size: 14px; line-height: 1.35; }
+.msg .bubble { font-size: 0.95rem; padding:10px; border-radius:12px; }
+
+/* input and send sizing */
+.footer { gap:8px; padding:10px; }
+input[type="text"] { font-size: 15px; padding:10px; }
+
+/* smaller screens adjustments */
+@media (max-width: 720px) {
+  :root{ --card-max-width: 760px; }
+  .card { padding:8px; height:calc(100vh - 36px); border-radius:10px; }
+  .logo-text { font-size: 14px; }
+  .messages { font-size: 13px; }
+  .msg { max-width: 95%; }
+  .msg .bubble { font-size: 13px; padding:10px; }
+  .controls select { max-width: 140px; }
+  .controls .model-note { display:none; } /* hide long note on small screens */
+  .copy-btn { right: -28px; top: 6px; } 
+  .footer { padding:8px; }
+  .send { padding: 8px 12px; min-width: 60px; }
+}
+
+/* very small screens */
+@media (max-width: 420px) {
+  .logo-icon { width:36px; height:36px; }
+  .logo-text { font-size: 13px; }
+  input[type="text"] { font-size: 14px; padding:9px; }
+  .messages { padding:8px; }
+}
+
+/* prevent overflow of long words */
+.bubble, input[type="text"], .model-note { word-break: break-word; overflow-wrap: anywhere; }
+/* ============== fixes (append to your existing CSS) ============== */
+
+/* make sure input & send are always above overlays and clickable */
+#send-button, #user-input {
+  z-index: 1000 !important;
+  position: relative !important;
+  pointer-events: auto !important;
+}
+
+/* if any overlay covers bottom, reduce its z-index */
+.chat-messages, .messages-overlay { z-index: 1 !important; pointer-events: auto !important; }
+
+/* ensure message text wraps and is visible in both themes */
+.message-text, .message-content { word-break: break-word; overflow-wrap: anywhere; }
+
+/* THEME variables using data-theme on html/root */
+:root {
+  --bg-color: #0d0d15;
+  --card-color: rgba(22,22,34,0.85);
+  --text-color: #f0f0f5;
+  --muted-color: rgba(240,240,250,0.6);
+  --user-bubble: #2a2a3a;
+  --ai-bubble: #1e1e2e;
+  --accent: #d0a0ff;
+}
+
+/* Light mode via data-theme="light" on <html> or <body> */
+html[data-theme="light"], body[data-theme="light"] {
+  --bg-color: #f6f7fb;
+  --card-color: rgba(255,255,255,0.95);
+  --text-color: #111827;
+  --muted-color: rgba(30,30,40,0.6);
+  --user-bubble: #eef0ff;
+  --ai-bubble: #ffffff;
+  --accent: #a463ff;
+}
+
+/* apply to your main containers (keep your original selectors) */
+body { background: var(--bg-color); color: var(--text-color); }
+.chat-container, .chat-wrapper { background: var(--card-color); color: var(--text-color); }
+
+/* message text color forced to var so theme stays correct */
+.message-text, .username, .timestamp, .note, .api-status {
+  color: var(--text-color) !important;
+}
+
+/* muted text for timestamps etc */
+.timestamp { color: var(--muted-color) !important; }
+
+/* buttons and selects should adapt */
+button, select, input { color: var(--text-color) !important; }
+
+/* ensure footer note visible in light mode too */
+.note { color: var(--muted-color) !important; }
+
+/* mobile safe: ensure bubbles width fits */
+@media (max-width: 768px) {
+  .message-content { max-width: 92% !important; }
+  .chat-container, .chat-wrapper { padding-bottom: 12px; }
+}

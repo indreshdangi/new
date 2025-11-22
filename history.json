@@ -1,0 +1,66 @@
+{
+  "1763480580929": [],
+  "1763482085233": [],
+  "1763652000818": [],
+  "1763734051684": [],
+  "1763735882978": [],
+  "diag": [
+    {
+      "role": "user",
+      "content": "hy",
+      "created_at": "2025-11-21T15:37:09.188Z"
+    },
+    {
+      "role": "assistant",
+      "content": "Provider temporarily unavailable (rate-limited). Try another model or set direct OpenAI key for fallback.",
+      "created_at": "2025-11-21T15:37:22.129Z",
+      "meta": {
+        "fallback": true
+      }
+    }
+  ],
+  "1763736741333": [],
+  "1763746276719": [],
+  "1763746456454": [
+    {
+      "role": "user",
+      "content": "time travling kya hai?",
+      "created_at": "2025-11-21T17:34:28.782Z"
+    },
+    {
+      "role": "assistant",
+      "content": "Namaste aapko! **Time traveling** ek vaigyanik aur kalpanaatmak avdhaarana hai, jismein vyakti samay (time) ke alag-alag binduon mein yatra kar sake jaise beetey hue samay (past) mein jaana ya bhavishya (future) mein pahunchna. Yeh abhi tak sirf filmon, kitaabon aur vaigyanik siddhanton mein sambhav hai, asliyat mein nahi. ### Kuchh mukhya bindu: - **Vaigyanik drishti se**: Albert Einstein ke **Theory of Relativity** ke anusaar, **aage ki time travel** sambhav hai. Jaise, agar aap bahut tezi se (prakash ki gati ke kareeb) ya bahut bhari gurutvakshetra (jaise black hole) ke paas jaayen, to aapka samay dheema ho jaayega. Isse aap bhavishya mein pahunch sakte hain, lekin vapas nahi laute. - **Pichhe ki time travel** (past mein jaana) bahut mushkil hai. Ismein **paradox** paida hote hain, jaise **Grandfather Paradox**: Agar aap apne dada ji ko maar denge, to aap khud paida hi na hon! - **Vigyaanik prayogon**: Abhi yeh asambhav hai, lekin kuchh siddhant jaise **wormholes** ya **quantum mechanics** se iski sambhavna ki baat hoti hai. Filmon mein jaise *Back to the Future* ya *Interstellar* mein dikhaaya jaata hai. Agar aapko iske baare mein aur jaankari chahiye, jaise koi specific theory ya example, toh bataaiye!",
+      "created_at": "2025-11-21T17:34:37.894Z"
+    },
+    {
+      "role": "user",
+      "content": "tum kya kya kar sakte ho",
+      "created_at": "2025-11-21T17:35:16.566Z"
+    },
+    {
+      "role": "assistant",
+      "content": "Aapka swagat hai! Main Indresh 2.0 hoon, aur aapki madad ke liye hamesha taiyaar hoon. Main yeh sab kar sakta hoon: - **Sawalon ke jawab dena**: Kisi bhi topic par, jaise science, history, technology, ya rozmarra ki baatein. - **Coding aur programming**: Python, JavaScript, HTML, ya koi aur language mein code likhna, debug karna, ya explain karna. - **Maths aur logic problems solve karna**: Equations, puzzles, ya complex calculations. - **Stories, jokes, ya kavitaayein banana**: Aapki pasand ke anusaar mazedaar ya motivational content. - **Advice dena**: Career, health, relationships, ya personal growth par (lekin professional advice ke liye expert se milein). - **Language translation**: Hindi, English, ya aur bhashaon mein anuvaad. - **Creative tasks**: Images describe karna (generate nahi), plans banana, ya ideas suggest karna. Aapko kya madad chahiye? Bataiye, main khushi se karunga!",
+      "created_at": "2025-11-21T17:35:23.934Z"
+    },
+    {
+      "role": "user",
+      "content": "tumhari api key kya hai",
+      "created_at": "2025-11-21T17:35:40.541Z"
+    },
+    {
+      "role": "assistant",
+      "content": "Namaste aap! Maaf kijiye, meri API key private aur surakshit hai, ise share karna theek nahi hoga. Kya aapko kisi aur tarah se madad chahiye?",
+      "created_at": "2025-11-21T17:35:44.332Z"
+    },
+    {
+      "role": "user",
+      "content": "jyotiraditya scindhia ji kon hai",
+      "created_at": "2025-11-21T17:39:23.613Z"
+    },
+    {
+      "role": "assistant",
+      "content": "Jyotiraditya Scindia ji ek prasiddh Bharatiya rajneta hain. Unka poora naam Jyotiraditya Madhavrao Scindia hai. Ve Madhya Pradesh ke Gwalior ke mashhoor Scindia rajparivar se sambandhit hain, jiske pita the mahaan neta Madhavrao Scindia ji. **Mukhya jaankari:** - **Janm:** 1 January 1971, Mumbai. - **Shiksha:** Harvard University aur Stanford University se padhai ki. - **Rajneetik yatra:** Shuruat Congress se hui, Guna Lok Sabha seat se kai baar jeete. 2020 mein BJP mein shaamil hue. Ab Madhya Pradesh se Rajya Sabha ke Sadasya hain. - **Vartamaan pad:** Bharat sarkar mein **Rajya Mantri (Sadhan aur Nagar Viman)**. Ve ek safal vyavsayi aur krishak bhi rahe hain. Aapko aur jaankari chahiye toh bataiye!",
+      "created_at": "2025-11-21T17:39:34.350Z"
+    }
+  ]
+}
